@@ -1,6 +1,7 @@
 
 import subprocess
 import os
+# test file, ignore this
 
 # 要下载的模型和数据集名称
 models = [
@@ -36,8 +37,7 @@ for model in models:
     print(f"Downloading model: {model}")
     subprocess.run([
         "huggingface-cli", "repo", "download", model,
-        "--type", "model",
-        "--local-dir", model_dir
+        "--type", "model"
     ], check=True)
 
 # 下载数据集
@@ -47,8 +47,7 @@ for dataset in datasets:
     print(f"Downloading dataset: {dataset}")
     subprocess.run([
         "huggingface-cli", "repo", "download", dataset,
-        "--type", "dataset",
-        "--local-dir", dataset_dir
+        "--type", "dataset"
     ], check=True)
 
 
